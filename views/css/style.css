@@ -1,0 +1,39 @@
+body {
+    background-image: linear-gradient(to right, darkred, orangered);
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+}
+
+h1 {
+    color: white;
+}
+
+div.content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+table {
+    border-collapse: collapse;
+
+}
+
+th {
+    background-color: #b9be02;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+
+}
+
+
+tr.line:nth-child(odd) {
+    background-color: #8f8f8f;
+}
+tr.line:nth-child(even) {
+    background-color: #ffffff;
+}

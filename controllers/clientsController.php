@@ -17,6 +17,6 @@ class clientsController
 
     {
         $resultData = $this->model->getAllDate();
-        print_r($resultData);
+        require_once './views/index.php';
     }
 }
