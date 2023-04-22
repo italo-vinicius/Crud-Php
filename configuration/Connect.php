@@ -11,11 +11,15 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(__DIR__  . '/..');
 $dotenv->load();
 
+define("HOST", $_ENV['HOST']);
+define("DATABASE", $_ENV['DATABASE']);
+define("USER", $_ENV['USER']);
+define("PASSWORD", $_ENV['PASSWORD']);
 
 
 class Connect
 {
-    protected $connection;
+    protected PDO $connection;
 
     public function __construct()
     {
@@ -25,7 +29,7 @@ class Connect
     private function connectDatabase(): void
     {
         try {
-            $this->connection = new PDO('mysql:host=' . getenv('HOST') . ';dbname=' . getenv('DATABASE'), getenv('USER'), getenv('PASSWORD'));
+        $this->connection = new PDO('mysql:host=' . HOST . ';dbname=' . DATABASE, USER, PASSWORD);
         } catch (PDOException $e) {
             echo 'ERROR! ' . $e->getMessage();
             die();
