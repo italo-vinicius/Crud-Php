@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -12,7 +15,7 @@
 </head>
 <body>
 <div class="box">
-    <form action="../index.php" method="post">
+    <form action="../controllers/createUser.php" method="post">
         <fieldset>
             <legend><b>Cadastre-se</b></legend>
             <br>

@@ -26,11 +26,6 @@ class Client extends Connect
 
     }
 
-    public function getAllDate(): false|array
-    {
-        $sqlSelect = $this->connection->query("SELECT * FROM " . $this->table);
-        return $sqlSelect->fetchAll();
-    }
 
     public function setValues(): void
     {

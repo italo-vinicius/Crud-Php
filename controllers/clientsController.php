@@ -12,17 +12,13 @@ class clientsController
         $this->model = new Client();
     }
 
-    public function getAll(): void
-
-    {
-        $resultData = $this->model->getAllDate();
-        require_once './views/home.php';
-    }
 
     public function createUser(): void
     {
         $this->model->setValues();
         $this->model->createUserModel();
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['password'] = $_POST['password'];
         header('Location: ../views/login.php');
     }
 
@@ -32,7 +28,7 @@ class clientsController
         if ($resultUser) {
             $_SESSION['email'] = $email;
             $_SESSION['password'] = $password;
-            header('Location: ../index.php');
+            header('Location: ../views/home.php');
         } else {
             unset($_SESSION['email']);
             unset($_SESSION['password']);

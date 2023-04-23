@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -14,13 +17,15 @@
 <main>
     <h1>Login</h1>
 
-    <form action="../controllers/userAuth.php" method="post">
+    <form action="../controllers/userAuth.php" method="post" autocomplete="off">
         <div class="formLogin">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" required placeholder="example@email.com">
+            <input type="text" name="email" id="email" required placeholder="example@email.com"
+                   value="<?= $_SESSION['email'] ?>">
             <br><br>
             <label for="password">Senha</label>
-            <input type="password" id="password" name="password" required placeholder="********">
+            <input type="password" id="password" name="password" required placeholder="********"
+                   value="<?= $_SESSION['password'] ?>">
             <input type="submit" id="login" value="Login">
         </div>
     </form>
