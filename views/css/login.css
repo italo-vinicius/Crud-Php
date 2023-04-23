@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to right, rgba(60, 3, 153, 0.897), rgb(109, 75, 153));
+    text-align: center;
+    color: white;
+}
+
+
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 15px;
+}
+
+input#login {
+    position: absolute;
+    top: 73%;
+    left: 42%;
+    margin-top: 17px;
+    text-decoration: none;
+    color: white;
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 9px;
+    background-image: linear-gradient(to right,  rgb(7, 168, 231), rgb(0, 185, 124) );
+
+}
+
+a#singUp {
+    text-decoration: none;
+    color: white;
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 8px;
+    background-image: linear-gradient(to right, rgb(210, 14, 14), rgb(196, 116, 0));
+
+}
+
+input#login:hover {
+    background-image: linear-gradient(to right,  rgb(3, 109, 151), rgb(1, 119, 80) );
+}
+a#singUp:hover {
+
+    background-image: linear-gradient(to right, rgb(200, 2, 2), rgb(180, 80, 0));
+
+}
+
+/*Caixa do formulário para logar*/
+
+.formLogin {
+    background-color: rgba(0, 0, 0, 0.548);
+    border: 3px solid #04c4ab;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 15px;
+    color: white;
+}
+
+#email , #password {
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+input#password {
+    margin-top: 10px;
+}
+
+input#email {
+    margin-left: 4px;
+}
+
+

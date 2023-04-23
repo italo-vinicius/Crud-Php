@@ -1,0 +1,11 @@
+body {
+    background-image: linear-gradient(to right, rgba(60, 3, 153, 0.897), rgb(109, 75, 153));
+    color: white;
+    text-align: center;
+}
+
+#welcome {
+    margin-top: 20px;
+    text-decoration: none;
+}
+
