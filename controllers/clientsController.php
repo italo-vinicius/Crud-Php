@@ -41,4 +41,14 @@ class clientsController
         }
 
     }
+
+    public function getUser(string $id): false|array
+    {
+        return $this->model->getUserById($id);
+    }
+
+    public function storeUser(int $id ,string $name, string $phone, string $email, string $city, string $state, string $address, string $sexo, string $data_nascimento, string $password): false|array
+    {
+        return $this->model->storeUser($id, $name, $phone, $email, $city, $state, $address, $sexo, $data_nascimento, $password);
+    }
 }

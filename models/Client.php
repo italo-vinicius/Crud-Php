@@ -76,5 +76,33 @@ class Client extends Connect
 
     }
 
+    public function getUserById(string $id): false|array
+    {
+        $sqlGetUser = "SELECT * FROM $this->table WHERE id = :id";
+        $query = $this->connection->prepare($sqlGetUser);
+        $query->bindParam(':id', $id);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function storeUser(int $id, string $name, string $phone, string $email, string $city, string $state, string $address, string $sexo, string $data_nascimento, string $password): false|array
+    {
+        $sqlStoreUser = "UPDATE $this->table SET name = :name, phone = :phone, email = :email, city = :city, state = :state, address = :address, sexo = :sexo, data_nascimento = :data_nascimento, password = :password WHERE id = :id";
+        $query = $this->connection->prepare($sqlStoreUser);
+        $query->bindParam(":id", $id);
+        $query->bindParam(":name", $name);
+        $query->bindParam(":phone", $phone);
+        $query->bindParam(":email", $email);
+        $query->bindParam(":city", $city);
+        $query->bindParam(":state", $state);
+        $query->bindParam(":address", $address);
+        $query->bindParam(":sexo", $sexo);
+        $query->bindParam(":data_nascimento", $data_nascimento);
+        $query->bindParam(":password", $password);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
 
 }
