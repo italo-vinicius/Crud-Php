@@ -51,4 +51,14 @@ class clientsController
     {
         return $this->model->storeUser($id, $name, $phone, $email, $city, $state, $address, $sexo, $data_nascimento, $password);
     }
+
+    public function deleteUser(int $id): bool|string
+    {
+        $user = $this->getUser($id);
+        if ($user) {
+            return $this->model->delete($id);
+        } else {
+            return 'Usuário não encotrado';
+        }
+    }
 }

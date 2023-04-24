@@ -104,5 +104,14 @@ class Client extends Connect
 
     }
 
+    public function delete(int $id): bool
+    {
+        $sqlDelete = "DELETE FROM $this->table WHERE id = :id";
+        $query = $this->connection->prepare($sqlDelete);
+        $query->bindParam(':id', $id);
+        $query->execute();
+        return true;
+    }
+
 
 }
