@@ -40,6 +40,11 @@ class Client extends Connect
         $this->password = $_POST['password'];
     }
 
+    public function getAllUsers(): false|array
+    {
+        $sqlSelect = $this->connection->query("SELECT * FROM " . $this->table);
+        return $sqlSelect->fetchAll();
+    }
 
     public function createUserModel(): void
     {

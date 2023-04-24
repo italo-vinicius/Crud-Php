@@ -12,6 +12,11 @@ class clientsController
         $this->model = new Client();
     }
 
+    public function getUsers(): array|false
+
+    {
+        return $this->model->getAllUsers();
+    }
 
     public function createUser(): void
     {
